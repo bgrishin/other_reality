@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            display: flex;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            min-width: 100%;
+            background: white;
+            font-family: 'Montserrat', sans-serif;
+        }
+        .main {
+            background-color: #000000;
+            color: white;
+            padding: 2vh;
+            width: 50%;
+            font-size: 2.5vh;
+        }
+        h2 {
+            width: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 7vh;
+        }
+        .pointer {
+            position: fixed;
+            transform: translate(-50%, -50%);
+            height: 300px;
+            width: 300px;
+            background: #fff;
+            border-radius: 50%;
+            pointer-events: none;
+            mix-blend-mode: difference;
+        }
+        .color {
+            background: transparent;
+            border: 0.2vh solid white;
+            border-radius: 50%;
+            height: 4vh;
+            width: 4vh;
+            margin: 1vh;
+        }
+        .color::-webkit-color-swatch {
+            border-radius: 50%;
+            height: 2vh;
+            width: 2vh;
+            border: none;
+        }
+        .color_text {
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+        }
+    </style>
+</head>
+<body>
+    <div class="pointer"></div>
+    <h2>Look in other reality</h2>
+    <div class="main">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A aperiam architecto corporis culpa dolorem eaque earum fuga ipsam iure labore maxime nam nemo nisi non obcaecati omnis pariatur quae quasi quod quos rem sed sit tempore, totam unde, veritatis voluptatibus voluptatum. A ad blanditiis, deleniti dolor eos laborum modi nihil perferendis tempora vitae? Adipisci animi assumenda corporis eaque expedita illo ipsam perferendis placeat voluptate, voluptates! Laborum libero maxime nisi numquam placeat praesentium quam quos. Ad alias modi repudiandae saepe. Accusamus ducimus odio optio quae veritatis! Ad architecto atque culpa dignissimos est, ex facilis fugiat inventore nemo placeat tempore totam. Accusantium amet asperiores eaque incidunt ipsum iure nobis odio officiis, possimus reiciendis sequi similique unde veritatis. Accusantium dolorem enim, optio quidem rem reprehenderit veniam. Accusantium aliquam aspernatur atque consequuntur deserunt dolorem maxime molestias neque quae rerum. Ad animi consectetur consequuntur dicta dignissimos eius eligendi error et exercitationem facere fugiat harum illo, laudantium minima minus, non, numquam odit officia perferendis provident ratione repellendus saepe sit soluta tempora unde vitae. Aliquid aperiam assumenda cumque cupiditate, dicta distinctio dolor eaque eius enim error exercitationem ipsam iure labore laudantium ratione sint tempora, veniam vitae voluptas voluptate. At et minima nesciunt nulla odio odit, soluta voluptatem!</p>
+        <div class="color_text">
+            <p>Choose the background color:</p>
+            <input type="color" class="color">
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(document).mousemove((e) => {
+             $('.pointer').css({left: e.pageX, top: e.pageY})
+        })
+        $('.color').on('input',() => {
+            $('.main').css('background-color', $('.color').val())
+        })
+    </script>
+</body>
+</html>
